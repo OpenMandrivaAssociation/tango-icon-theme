@@ -3,7 +3,7 @@
 
 Summary: Tango icon theme
 Name: tango-icon-theme
-Version: 0.8.0
+Version: 0.8.1
 Release: %mkrel 1
 License: Creative Commons Attribution-ShareAlike 2.5
 Group: Graphical desktop/Other
@@ -46,10 +46,10 @@ chmod 644 tango_addon/readme.txt
 rm tango_addon/apps/gtk-close.svg
 
 %build
-%configure2_5x --enable-png-creation
+./configure --prefix=%_prefix --enable-png-creation
 %make
 cd %extraname-%extraversion
-%configure2_5x --enable-png-creation
+./configure --prefix=%_prefix --enable-png-creation
 %make
 
 %install
