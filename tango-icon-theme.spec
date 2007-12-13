@@ -4,7 +4,7 @@
 Summary: Tango icon theme
 Name: tango-icon-theme
 Version: 0.8.1
-Release: %mkrel 1
+Release: %mkrel 2
 License: Creative Commons Attribution-ShareAlike 2.5
 Group: Graphical desktop/Other
 URL: http://tango-project.org/Tango_Icon_Library#Download
@@ -12,6 +12,7 @@ Source0: http://tango-project.org/releases/%{name}-%{version}.tar.bz2
 Source1: http://tango-project.org/releases/%{extraname}-%{extraversion}.tar.bz2
 # http://www.gnome-look.org/content/show.php?content=41229
 Source2: tango_addon-0.5b.tar.bz2
+Source3: tango-icon-theme-xfce.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
 BuildRequires: perl-XML-Parser
@@ -37,7 +38,7 @@ It bundles with the extra icon set and additional Mandriva icons.
 This contains the additional PNG image files that are required by KDE.
 
 %prep
-%setup -q -a 1 -a 2
+%setup -q -a 1 -a 2 -a 3
 cp %extraname-%extraversion/README README.extra
 cp %extraname-%extraversion/AUTHORS AUTHORS.extra
 cp %extraname-%extraversion/ChangeLog ChangeLog.extra
@@ -73,6 +74,9 @@ for context in apps categories; do
   (cd $pngdir && %_prefix/lib/icon-name-mapping -c ${context})
   done
 done
+
+cd ../tango-icon-theme-xfce
+install -m 644 scalable/apps/* %buildroot%_datadir/icons/Tango/scalable/apps
 
 touch %buildroot%_datadir/icons/Tango/icon-theme.cache
 
