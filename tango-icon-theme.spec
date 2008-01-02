@@ -13,6 +13,7 @@ Source1: http://tango-project.org/releases/%{extraname}-%{extraversion}.tar.bz2
 # http://www.gnome-look.org/content/show.php?content=41229
 Source2: tango_addon-0.5b.tar.bz2
 Source3: tango-icon-theme-xfce.tar.bz2
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
 BuildRequires: perl-XML-Parser
 BuildRequires: ImageMagick ImageMagick-devel
