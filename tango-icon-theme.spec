@@ -4,7 +4,7 @@
 Summary: Tango icon theme
 Name: tango-icon-theme
 Version: 0.8.1
-Release: %mkrel 2
+Release: %mkrel 4
 License: Creative Commons Attribution-ShareAlike 2.5
 Group: Graphical desktop/Other
 URL: http://tango-project.org/Tango_Icon_Library#Download
