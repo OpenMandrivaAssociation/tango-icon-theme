@@ -4,7 +4,7 @@
 Summary: Tango icon theme
 Name: tango-icon-theme
 Version: 0.8.1
-Release: %mkrel 5
+Release: %mkrel 6
 License: Creative Commons Attribution-ShareAlike 2.5
 Group: Graphical desktop/Other
 URL: http://tango.freedesktop.org/Tango_Icon_Library#Download
@@ -18,24 +18,14 @@ BuildArch: noarch
 BuildRequires: intltool
 BuildRequires: ImageMagick ImageMagick-devel
 BuildRequires: icon-naming-utils >= 0.8.2
-BuildRequires: librsvg librsvg-devel
 Requires(post): gtk+2.0
 Requires(postun): gtk+2.0
+Provides: tango-icon-theme-kde
+Obsoletes: tango-icon-theme-kde
 
 %description
 This is an icon theme that follows the Tango visual guidelines.
 It bundles with the extra icon set and additional Mandriva icons.
-
-%package kde
-Summary: Tango icon theme for KDE
-Requires: %name = %version
-Group: Graphical desktop/KDE
-
-%description kde
-This is an icon theme that follows the Tango visual guidelines.
-It bundles with the extra icon set and additional Mandriva icons.
-
-This contains the additional PNG image files that are required by KDE.
 
 %prep
 %setup -q -a 1 -a 2 -a 3
@@ -47,10 +37,10 @@ chmod 644 tango_addon/readme.txt
 rm tango_addon/apps/gtk-close.svg
 
 %build
-./configure --prefix=%_prefix --enable-png-creation
+./configure --prefix=%_prefix
 %make
 cd %extraname-%extraversion
-./configure --prefix=%_prefix --enable-png-creation
+./configure --prefix=%_prefix
 %make
 
 %install
@@ -61,19 +51,6 @@ cd %extraname-%extraversion
 cd ../tango_addon
 install -m 644 apps/* %buildroot%_datadir/icons/Tango/scalable/apps
 install -m 644 categories/* %buildroot%_datadir/icons/Tango/scalable/categories
-#manually create png files for Mandriva icons
-for context in apps categories; do
-  for i in 32 48 64 72 96 128; do
-    pngdir=%buildroot%_datadir/icons/Tango/${i}x${i}/${context}
-    mkdir -p $pngdir
-    cd ${context}
-    for icon in *; do
-      ../../svg2png.sh $i $pngdir $icon
-    done
-    cd ..
-  (cd $pngdir && %_prefix/lib/icon-name-mapping -c ${context})
-  done
-done
 
 cd ../tango-icon-theme-xfce
 install -m 644 scalable/apps/* %buildroot%_datadir/icons/Tango/scalable/apps
@@ -88,11 +65,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %postun
 %clean_icon_cache Tango
-%post kde
-%update_icon_cache Tango
-
-%postun kde
-%clean_icon_cache Tango
 
 %files
 %defattr(-,root,root,-)
@@ -103,17 +75,6 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/icons/Tango/16x16
 %_datadir/icons/Tango/22x22
 %_datadir/icons/Tango/24x24
+%_datadir/icons/Tango/32x32
 %_datadir/icons/Tango/scalable
 %ghost %_datadir/icons/Tango/icon-theme.cache
-
-%files kde
-%defattr(-,root,root,-)
-%doc README COPYING
-%_datadir/icons/Tango/32x32
-%_datadir/icons/Tango/48x48
-%_datadir/icons/Tango/64x64
-%_datadir/icons/Tango/72x72
-%_datadir/icons/Tango/96x96
-%_datadir/icons/Tango/128x128
-
-
