@@ -7,15 +7,15 @@ Version: 0.8.1
 Release: %mkrel 5
 License: Creative Commons Attribution-ShareAlike 2.5
 Group: Graphical desktop/Other
-URL: http://tango-project.org/Tango_Icon_Library#Download
-Source0: http://tango-project.org/releases/%{name}-%{version}.tar.bz2
-Source1: http://tango-project.org/releases/%{extraname}-%{extraversion}.tar.bz2
+URL: http://tango.freedesktop.org/Tango_Icon_Library#Download
+Source0: http://tango.freedesktop.org/releases/%{name}-%{version}.tar.bz2
+Source1: http://tango.freedesktop.org/releases/%{extraname}-%{extraversion}.tar.bz2
 # http://www.gnome-look.org/content/show.php?content=41229
 Source2: tango_addon-0.5b.tar.bz2
 Source3: tango-icon-theme-xfce.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
-BuildRequires: perl-XML-Parser
+BuildRequires: intltool
 BuildRequires: ImageMagick ImageMagick-devel
 BuildRequires: icon-naming-utils >= 0.8.2
 BuildRequires: librsvg librsvg-devel
