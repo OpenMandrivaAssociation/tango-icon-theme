@@ -16,7 +16,7 @@ Source3: tango-icon-theme-xfce.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
 BuildRequires: intltool
-BuildRequires: ImageMagick ImageMagick-devel
+BuildRequires: imagemagick imagemagick-devel
 BuildRequires: icon-naming-utils >= 0.8.2
 Requires(post): gtk+2.0
 Requires(postun): gtk+2.0
