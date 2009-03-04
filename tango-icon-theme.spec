@@ -3,9 +3,9 @@
 
 Summary: Tango icon theme
 Name: tango-icon-theme
-Version: 0.8.1
-Release: %mkrel 6
-License: Creative Commons Attribution-ShareAlike 2.5
+Version: 0.8.90
+Release: %mkrel 1
+License: Public Domain
 Group: Graphical desktop/Other
 URL: http://tango.freedesktop.org/Tango_Icon_Library#Download
 Source0: http://tango.freedesktop.org/releases/%{name}-%{version}.tar.bz2
@@ -17,7 +17,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
 BuildRequires: intltool
 BuildRequires: imagemagick imagemagick-devel
-BuildRequires: icon-naming-utils >= 0.8.2
+BuildRequires: icon-naming-utils >= 0.8.90
 Requires(post): gtk+2.0
 Requires(postun): gtk+2.0
 Provides: tango-icon-theme-kde
