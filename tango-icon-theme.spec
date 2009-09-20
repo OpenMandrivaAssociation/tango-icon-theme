@@ -4,7 +4,7 @@
 Summary: Tango icon theme
 Name: tango-icon-theme
 Version: 0.8.90
-Release: %mkrel 2
+Release: %mkrel 3
 License: Public Domain
 Group: Graphical desktop/Other
 URL: http://tango.freedesktop.org/Tango_Icon_Library#Download
@@ -56,6 +56,8 @@ cd ../tango-icon-theme-xfce
 install -m 644 scalable/apps/* %buildroot%_datadir/icons/Tango/scalable/apps
 
 touch %buildroot%_datadir/icons/Tango/icon-theme.cache
+
+ln -s mozilla-firefox.svg %{buildroot}%{_iconsdir}/Tango/scalable/apps/firefox.svg
 
 %clean
 rm -rf $RPM_BUILD_ROOT
