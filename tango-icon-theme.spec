@@ -80,3 +80,84 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/icons/Tango/32x32
 %_datadir/icons/Tango/scalable
 %ghost %_datadir/icons/Tango/icon-theme.cache
+
+
+%changelog
+* Thu Sep 22 2011 Götz Waschk <waschk@mandriva.org> 0.8.90-4mdv2012.0
++ Revision: 700802
+- rebuild
+
+* Sun Sep 20 2009 Frederik Himpe <fhimpe@mandriva.org> 0.8.90-3mdv2011.0
++ Revision: 445387
+- Add firefox.svg because the icon was renamed in firefox packages too
+  (bug #53214)
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+
+* Wed Mar 04 2009 Götz Waschk <waschk@mandriva.org> 0.8.90-1mdv2009.1
++ Revision: 348238
+- new version
+- update license
+- update build deps
+
+  + Oden Eriksson <oeriksson@mandriva.com>
+    - lowercase ImageMagick
+
+* Mon Sep 08 2008 Götz Waschk <waschk@mandriva.org> 0.8.1-6mdv2009.0
++ Revision: 282486
+- drop kde package
+- update URL
+- update build deps
+
+* Sat Aug 02 2008 Thierry Vignaud <tv@mandriva.org> 0.8.1-5mdv2009.0
++ Revision: 261374
+- rebuild
+
+* Tue Jul 29 2008 Thierry Vignaud <tv@mandriva.org> 0.8.1-4mdv2009.0
++ Revision: 254111
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <blino@mandriva.org>
+    - restore BuildRoot
+
+* Thu Dec 13 2007 Jérôme Soyer <saispo@mandriva.org> 0.8.1-2mdv2008.1
++ Revision: 119414
+- Add Xfce enhancements
+
+* Tue Aug 28 2007 Götz Waschk <waschk@mandriva.org> 0.8.1-1mdv2008.0
++ Revision: 72562
+- new version
+
+
+* Wed Feb 28 2007 Götz Waschk <waschk@mandriva.org> 0.8.0-1mdv2007.0
++ Revision: 126862
+- new version
+- bump deps
+- Import tango-icon-theme
+
+* Sat Sep 02 2006 Götz Waschk <waschk@mandriva.org> 0.7.2-1mdv2007.0
+- rebuild for new clean_icon_cache macro
+
+* Thu Aug 31 2006 Götz Waschk <waschk@mandriva.org> 0.7.2-6mdv2007.0
+- fix uninstallation
+
+* Wed Aug 30 2006 Götz Waschk <waschk@mandriva.org> 0.7.2-5mdv2007.0
+- update tango addon
+- remove big red close icon
+- fix buildrequires
+
+* Thu Jul 27 2006 Götz Waschk <waschk@mandriva.org> 0.7.2-4mdv2007.0
+- fix uninstallation
+
+* Thu Jul 27 2006 Götz Waschk <waschk@mandriva.org> 0.7.2-3mdv2007.0
+- add png icons for KDE
+
+* Thu Jul 27 2006 Götz Waschk <waschk@mandriva.org> 0.7.2-2mdv2007.0
+- add extra icons
+- fix buildrequires
+
+* Thu Jul 27 2006 Götz Waschk <waschk@mandriva.org> 0.7.2-1mdv2007.0
+- initial package
+
