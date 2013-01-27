@@ -1,27 +1,27 @@
 %define extraname tango-icon-theme-extras
 %define extraversion 0.1.0
 
-Summary: Tango icon theme
-Name: tango-icon-theme
-Version: 0.8.90
-Release: %mkrel 4
-License: Public Domain
-Group: Graphical desktop/Other
-URL: http://tango.freedesktop.org/Tango_Icon_Library#Download
-Source0: http://tango.freedesktop.org/releases/%{name}-%{version}.tar.bz2
-Source1: http://tango.freedesktop.org/releases/%{extraname}-%{extraversion}.tar.bz2
+Summary:	Tango icon theme
+Name:		tango-icon-theme
+Version:	0.8.90
+Release:	5
+License:	Public Domain
+Group:		Graphical desktop/Other
+URL:		http://tango.freedesktop.org/Tango_Icon_Library#Download
+Source0:	http://tango.freedesktop.org/releases/%{name}-%{version}.tar.bz2
+Source1:	http://tango.freedesktop.org/releases/%{extraname}-%{extraversion}.tar.bz2
 # http://www.gnome-look.org/content/show.php?content=41229
-Source2: tango_addon-0.5b.tar.bz2
-Source3: tango-icon-theme-xfce.tar.bz2
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildArch: noarch
-BuildRequires: intltool
-BuildRequires: imagemagick imagemagick-devel
-BuildRequires: icon-naming-utils >= 0.8.90
-Requires(post): gtk+2.0
-Requires(postun): gtk+2.0
-Provides: tango-icon-theme-kde
-Obsoletes: tango-icon-theme-kde
+Source2:	tango_addon-0.5b.tar.bz2
+Source3:	tango-icon-theme-xfce.tar.bz2
+BuildArch:	noarch
+BuildRequires:	intltool
+BuildRequires:	imagemagick
+BuildRequires:	imagemagick-devel
+BuildRequires:	icon-naming-utils >= 0.8.90
+Requires(post):	gtk+2.0
+Requires(postun):	gtk+2.0
+Provides:	tango-icon-theme-kde = %{version}-%{release}
+Obsoletes:	tango-icon-theme-kde < %{version}-%{release}
 
 %description
 This is an icon theme that follows the Tango visual guidelines.
@@ -58,15 +58,6 @@ install -m 644 scalable/apps/* %buildroot%_datadir/icons/Tango/scalable/apps
 touch %buildroot%_datadir/icons/Tango/icon-theme.cache
 
 ln -s mozilla-firefox.svg %{buildroot}%{_iconsdir}/Tango/scalable/apps/firefox.svg
-
-%clean
-rm -rf $RPM_BUILD_ROOT
-
-%post
-%update_icon_cache Tango
-
-%postun
-%clean_icon_cache Tango
 
 %files
 %defattr(-,root,root,-)
