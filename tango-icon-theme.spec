@@ -7,7 +7,7 @@ Version:	0.8.90
 Release:	6
 License:	Public Domain
 Group:		Graphical desktop/Other
-URL:		http://tango.freedesktop.org/Tango_Icon_Library#Download
+URL:		https://tango.freedesktop.org/Tango_Icon_Library#Download
 Source0:	http://tango.freedesktop.org/releases/%{name}-%{version}.tar.bz2
 Source1:	http://tango.freedesktop.org/releases/%{extraname}-%{extraversion}.tar.bz2
 # http://www.gnome-look.org/content/show.php?content=41229
