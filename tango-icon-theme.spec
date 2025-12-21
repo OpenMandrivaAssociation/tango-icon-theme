@@ -14,6 +14,11 @@ Source1:	http://tango.freedesktop.org/releases/%{extraname}-%{extraversion}.tar.
 Source2:	tango_addon-0.5b.tar.bz2
 Source3:	tango-icon-theme-xfce.tar.bz2
 BuildArch:	noarch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	intltool
 BuildRequires:	imagemagick
 BuildRequires:	imagemagick-devel
